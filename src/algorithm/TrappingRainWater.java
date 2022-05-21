@@ -10,6 +10,9 @@ public class TrappingRainWater {
      * 3. total water is min of maxLeft and maxRight minus current value at index.
      *
      * https://leetcode.com/problems/trapping-rain-water/
+     *
+     * Time Complexity : O(N^2)
+     * Space Complexity : O(1)
      */
     public static  int trap(int[] height) {
         int total =0;
