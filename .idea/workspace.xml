@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dc5304be-815d-41af-a3d7-7ed418e1805b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Interface" />
+        <option value="package-info" />
+        <option value="Class" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1iQGyaT7Nm0yn0LiKPS1zPluXXX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="ignore.preview.features.used" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunManager" selected="Application.DistributeCoinsInBinaryTree">
+    <configuration name="DistributeCoinsInBinaryTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithm.DistributeCoinsInBinaryTree" />
+      <module name="AlgoDataStructure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FindBottomLeftTreeValue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithm.FindBottomLeftTreeValue" />
+      <module name="AlgoDataStructure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartitionList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithm.PartitionList" />
+      <module name="AlgoDataStructure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RangeSumOfBST" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithm.RangeSumOfBST" />
+      <module name="AlgoDataStructure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnivaluedBinaryTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithm.UnivaluedBinaryTree" />
+      <module name="AlgoDataStructure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DistributeCoinsInBinaryTree" />
+        <item itemvalue="Application.UnivaluedBinaryTree" />
+        <item itemvalue="Application.RangeSumOfBST" />
+        <item itemvalue="Application.PartitionList" />
+        <item itemvalue="Application.FindBottomLeftTreeValue" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc5304be-815d-41af-a3d7-7ed418e1805b" name="Default Changelist" comment="" />
+      <created>1601832657725</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601832657725</updated>
+      <workItem from="1601832660108" duration="5534000" />
+      <workItem from="1601844952726" duration="2624000" />
+      <workItem from="1601850804939" duration="2045000" />
+      <workItem from="1620946114093" duration="6259000" />
+      <workItem from="1621881800236" duration="3734000" />
+      <workItem from="1622042249965" duration="490000" />
+      <workItem from="1622064247221" duration="1561000" />
+      <workItem from="1622077581286" duration="1992000" />
+      <workItem from="1622135165397" duration="34994000" />
+      <workItem from="1623159711839" duration="5494000" />
+      <workItem from="1623274177448" duration="4737000" />
+      <workItem from="1623711413035" duration="99000" />
+      <workItem from="1623851709855" duration="284000" />
+      <workItem from="1624024817465" duration="2504000" />
+      <workItem from="1624981942615" duration="1086000" />
+      <workItem from="1625060592742" duration="219000" />
+      <workItem from="1647450738076" duration="2136000" />
+      <workItem from="1650404757871" duration="24303000" />
+      <workItem from="1651012102230" duration="16780000" />
+      <workItem from="1651237578394" duration="30040000" />
+      <workItem from="1651784899810" duration="5386000" />
+      <workItem from="1651850134472" duration="669000" />
+      <workItem from="1651851770880" duration="1132000" />
+      <workItem from="1651858338801" duration="70866000" />
+      <workItem from="1652308785267" duration="3255000" />
+      <workItem from="1652806225924" duration="1086000" />
+      <workItem from="1653144439882" duration="374000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algorithm/LongestPalindromicSubstring.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algorithm/PartitionList.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="algorithm.util.binarytree.Node" memberName="right" />
+        <PinnedItemInfo parentTag="algorithm.util.Node" memberName="next" />
+        <PinnedItemInfo parentTag="algorithm.NaryTreePreOrder$Node" memberName="val" />
+        <PinnedItemInfo parentTag="algorithm.util.Node" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="moves" language="JAVA" />
+        <watch expression="left" language="JAVA" />
+        <watch expression="right" language="JAVA" />
+        <watch expression="node.val" language="JAVA" />
+        <watch expression="node.val + left + right -1" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
