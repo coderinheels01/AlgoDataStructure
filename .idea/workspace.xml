@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc5304be-815d-41af-a3d7-7ed418e1805b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/algorithm/TrappingRainWater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +19,8 @@
         <option value="Record" />
         <option value="Interface" />
         <option value="package-info" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,22 +62,9 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Application.DistributeCoinsInBinaryTree">
+  <component name="RunManager" selected="Application.TrappingRainWater">
     <configuration name="DistributeCoinsInBinaryTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="algorithm.DistributeCoinsInBinaryTree" />
-      <module name="AlgoDataStructure" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="algorithm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FindBottomLeftTreeValue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="algorithm.FindBottomLeftTreeValue" />
       <module name="AlgoDataStructure" />
       <extension name="coverage">
         <pattern>
@@ -114,6 +102,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TrappingRainWater" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithm.TrappingRainWater" />
+      <module name="AlgoDataStructure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UnivaluedBinaryTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="algorithm.UnivaluedBinaryTree" />
       <module name="AlgoDataStructure" />
@@ -127,13 +128,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TrappingRainWater" />
         <item itemvalue="Application.DistributeCoinsInBinaryTree" />
         <item itemvalue="Application.UnivaluedBinaryTree" />
         <item itemvalue="Application.RangeSumOfBST" />
         <item itemvalue="Application.PartitionList" />
-        <item itemvalue="Application.FindBottomLeftTreeValue" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +188,7 @@
       <workItem from="1652806225924" duration="1086000" />
       <workItem from="1653144439882" duration="374000" />
       <workItem from="1653145205013" duration="321000" />
-      <workItem from="1653150663250" duration="126000" />
+      <workItem from="1653150663250" duration="1507000" />
     </task>
     <task id="LOCAL-00001" summary="algo and data structure questions">
       <created>1653145362390</created>
@@ -185,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653145362390</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="gitlab set up to ssh">
+      <created>1653151411098</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653151411098</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +215,8 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="algo and data structure questions" />
-    <option name="LAST_COMMIT_MESSAGE" value="algo and data structure questions" />
+    <MESSAGE value="gitlab set up to ssh" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitlab set up to ssh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -223,11 +243,7 @@
     </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="moves" language="JAVA" />
-        <watch expression="left" language="JAVA" />
-        <watch expression="right" language="JAVA" />
-        <watch expression="node.val" language="JAVA" />
-        <watch expression="node.val + left + right -1" language="JAVA" />
+        <watch expression="height[i]" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
