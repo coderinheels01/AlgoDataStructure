@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc5304be-815d-41af-a3d7-7ed418e1805b" name="Default Changelist" comment="" />
+    <list default="true" id="dc5304be-815d-41af-a3d7-7ed418e1805b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +24,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -173,7 +175,17 @@
       <workItem from="1652308785267" duration="3255000" />
       <workItem from="1652806225924" duration="1086000" />
       <workItem from="1653144439882" duration="374000" />
+      <workItem from="1653145205013" duration="321000" />
+      <workItem from="1653150663250" duration="126000" />
     </task>
+    <task id="LOCAL-00001" summary="algo and data structure questions">
+      <created>1653145362390</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653145362390</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +195,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+    <MESSAGE value="algo and data structure questions" />
+    <option name="LAST_COMMIT_MESSAGE" value="algo and data structure questions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
