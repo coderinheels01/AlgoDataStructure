@@ -138,7 +138,7 @@ public class TrappingRainWater {
       int[] height = new int[] {0,1,0,2,1,0,1,3,2,1,2,1};
         System.out.println("original array ");
         PrintUtil.printIntArrayWithoutName(height);
-        System.out.println("----- METHOD 1 -----");
+        System.out.println("----- METHOD 1 ------");
         System.out.println("total water = " + trap(height));
         System.out.println("----- METHOD 2 -----");
         System.out.println("total water = " + trapMethod2(height));
