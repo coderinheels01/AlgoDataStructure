@@ -78,7 +78,7 @@ public class TrappingRainWater {
         //left :  [4,4,4,4,4,5]
         //right:  [5,5,5,5,5,5]
         //height: [4,2,0,3,2,5]
-        //.        0,2,4,1,2,0
+        //tota:   [0,2,4,1,2,0] = 9
         for(int i=0; i< n; i++){
             total += Math.min(left[i], right[i]) - height[i];
         }
