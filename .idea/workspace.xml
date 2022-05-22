@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc5304be-815d-41af-a3d7-7ed418e1805b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/algorithm/TrappingRainWater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="dc5304be-815d-41af-a3d7-7ed418e1805b" name="Default Changelist" comment="Time and Space complexity for brute force trapping rain water">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +43,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
@@ -204,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653151411098</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="trapping rain water O(N) time and O(N) space solution">
+      <created>1653179397250</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653179397250</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +223,8 @@
     </ignored-roots>
     <MESSAGE value="algo and data structure questions" />
     <MESSAGE value="gitlab set up to ssh" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitlab set up to ssh" />
+    <MESSAGE value="trapping rain water O(N) time and O(N) space solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="trapping rain water O(N) time and O(N) space solution" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
