@@ -85,6 +85,54 @@ public class TrappingRainWater {
 
         return total;
     }
+    /*
+     * two pointers approach
+     * 1. left index starts from the beginning of the array.
+     * 2. right index starts from the end of the array
+     * 3. initialize leftMax with 0 and rightMax with 0
+     * 3. is value at left index less than value at right index?
+     *    a) is current value greater than leftMax ? ( this mean there is no wall
+     *       high enough on the left to retain the water. replace leftMax with current value.
+     *    b) otherwise, calculate the water at this point. ( maxLeft -  currentValue)
+     * 4. is the value at right index less than the value at left index?
+     *    a) is current value greater than maxRight? then update maxRight with current value.
+     *    b) otherwise, calculate water at this point. ( maxRight - currentValue)
+     *
+     * Time Complexity : O(N)
+     * Space Complexity : O(1)
+     *
+     *
+     */
+    public static int trapMethod3(int[] height) {
+        int leftP = 0;
+        int rightP = height.length-1;
+        int total =0;
+        int maxLeft = 0;
+        int maxRight = 0;
+
+        while(leftP <= rightP){
+            if(maxLeft < maxRight){
+                if(height[leftP] > maxLeft){
+                    maxLeft = height[leftP];
+                }
+                else{
+                    total += maxLeft - height[leftP];
+                }
+                leftP++;
+            }
+            else{
+                if(height[rightP] > maxRight){
+                    maxRight = height[rightP];
+                }
+                else{
+                    total += maxRight - height[rightP];
+                }
+                rightP--;
+            }
+        }
+
+        return total;
+    }
 
     public static void main(String ...args){
       int[] height = new int[] {0,1,0,2,1,0,1,3,2,1,2,1};
@@ -94,5 +142,7 @@ public class TrappingRainWater {
         System.out.println("total water = " + trap(height));
         System.out.println("----- METHOD 2 -----");
         System.out.println("total water = " + trapMethod2(height));
+        System.out.println("----- METHOD 3 -----");
+        System.out.println("total water = " + trapMethod3(height));
     }
 }
