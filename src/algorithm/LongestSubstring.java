@@ -26,7 +26,97 @@ public class LongestSubstring {
     // findLongestSubstringLength(input));
     System.out.println(longestSubstring(input));
     }
+    /*
+     * sliding window approach
+     *
+     * 1. while the right pointer is less than string length
+     * 2. if character is seen before, and it falls within current window,
+     *    then move the left pointer to the index right after the seen character.
+     * 3. mark character as seen and put it in the hash map.
+     * 4. calculate longest substring but comparing previous longest substring length with current substring length ( right - left ) + 1
+     *
+     * Time Complexity : O(N)
+     * Space Complexity : O(N)
+     *
+     * https://leetcode.com/problems/longest-substring-without-repeating-characters/
+     *
+     */
+    public static int longestSubStringOptimized2(String s){
+        if(s.length() <= 1) return s.length();
 
+        int longestSubstr =0;
+
+        int rightPointer = 0;
+        int leftPointer = 0;
+
+        Map<Character, Integer> seen = new HashMap<>();
+
+        while(rightPointer < s.length()){
+            Integer index = seen.get(s.charAt(rightPointer));
+            if(index!= null && index >= leftPointer){
+                leftPointer = index +1;
+            }
+            seen.put(s.charAt(rightPointer), rightPointer );
+            longestSubstr = Math.max(rightPointer - leftPointer +1, longestSubstr);
+            rightPointer++;
+        }
+
+        return longestSubstr;
+    };
+
+
+    public static int longestSubStringBruteForce(String s){
+        if(s.length() <= 1)
+            return s.length();
+
+        int longestSubstr = 0;
+        boolean[] seen;
+
+
+
+        for(int i=0; i< s.length(); i++){
+            int currentSubStr = 0;
+            seen = new boolean[127];
+            for(int j= i ; j < s.length(); j++){
+                if(seen[s.charAt(j)]){
+                    break;
+                }
+                else{
+                    seen[s.charAt(j)] = true;
+                    currentSubStr++;
+                    if(currentSubStr > longestSubstr)
+                        longestSubstr = currentSubStr;
+                }
+            }
+        }
+        return longestSubstr;
+    };
+
+    public static int longestSubStringOptimized(String s){
+        if(s.length() <= 1) return s.length();
+
+        int longestSubstr =0;
+        int currentSubstr =0;
+        Map<Character, Integer> seen = new HashMap<>() ;
+        int index =0;
+
+        while(index < s.length()){
+            if(seen.get(s.charAt(index)) != null){
+                index = seen.get(s.charAt(index));
+                seen.clear();
+                currentSubstr =0;
+            }
+            else{
+                seen.put(s.charAt(index), index);
+                currentSubstr++;
+                longestSubstr = Math.max(currentSubstr, longestSubstr);
+            }
+            index++;
+        }
+
+
+        return longestSubstr;
+    }
     public static int longestSubstring(String s){
         String maxSubString = "";
         String currentSubstring = "";
