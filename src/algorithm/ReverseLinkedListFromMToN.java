@@ -45,10 +45,12 @@ public class ReverseLinkedListFromMToN {
            current = next;
            currentPosition++;
        }
-       start.setNext(prev);
-       tail.setNext(current);
+       if(start != null) start.setNext(prev);
+       if(tail != null) tail.setNext(current);
 
-     return head;
+       if(m >1 )
+           return head;
+     return prev;
     }
 
 
@@ -58,8 +60,8 @@ public class ReverseLinkedListFromMToN {
         head.getNext().setNext(new Node(3));
         head.getNext().getNext().setNext(new Node(4));
         head.getNext().getNext().getNext().setNext(new Node(5));
-        int m = 3;
-        int n = 5;
+        int m = 1;
+        int n = 4;
         System.out.println(" ----- ORIGINAL Linked List ----- ");
         PrintUtil.printLinkedList(head);
         System.out.println(" ----- REVERSE M TO N ----- ");
