@@ -32,6 +32,8 @@ public class LinkedListCycleII {
     }
 
     /*
+     * IMPORTANT: make sure the head is not null and the head does the only node. if yes then return null right away.
+     *
      *
      * 1. Using two pointers (slow and fast) detect if the linked list has a node.
      * 2. if the pointers meet, break out of the loop
@@ -44,6 +46,8 @@ public class LinkedListCycleII {
      * Space Complexity : O(1)
      */
     public static Node detectCycleOptimized(Node head){
+        if(head == null || head.getNext() == null)
+            return null;
         Node slow = head;
         Node fast = head;
 
