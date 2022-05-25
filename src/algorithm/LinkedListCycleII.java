@@ -86,5 +86,16 @@ public class LinkedListCycleII {
         else{
             System.out.println("The list does not have cycle.");
         }
+
+        head = new Node(1);
+        head.setNext(new Node(2));
+        head.getNext().setNext(new Node(3));
+
+        firstPointer = detectCycleOptimized(head);
+        if(firstPointer != null)
+            System.out.println("The list has a cycle and the first pointer it meets is at : " + firstPointer.getValue());
+        else{
+            System.out.println("The list does not have cycle.");
+        }
     }
 }
