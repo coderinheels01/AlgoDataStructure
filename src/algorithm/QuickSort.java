@@ -6,6 +6,8 @@ public class QuickSort {
 
     /*
      * only need this function to call quick sort recursion function with left and right indexes.
+     *
+     * https://leetcode.com/problems/kth-largest-element-in-an-array/
      */
     public static void sort(int[] nums){
         int n = nums.length;
@@ -37,7 +39,7 @@ public class QuickSort {
         int partitionIndex = left;
         int j = left;
         while(j < right){
-            if(nums[j] < nums[right]){
+            if(nums[j] <= nums[right]){
                 swap(nums, partitionIndex, j);
                 partitionIndex++;
             }
