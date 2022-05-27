@@ -9,6 +9,19 @@ import java.util.List;
 import java.util.Queue;
 
 public class BinaryTreeLevelOrderTraversal {
+
+    /*
+     * level order printing.
+     *
+     * 1. add the nodes at each level to queue.
+     * 2. get the size of the queue at that point of time and add the result to the array list
+     *    also add the children to the same queue.
+     * 3. the size is the indication of when to go to the next level.
+     *
+     *
+     * Time Complexity: O(N) because we touch every node
+     * Space Complexity: O(N)
+     */
     public static List<List<Integer>> levelOrder(Node root){
         Queue<Node> q = new LinkedList<>();
         q.add(root);
@@ -22,8 +35,8 @@ public class BinaryTreeLevelOrderTraversal {
             subLevel = new ArrayList<>();
             while(size > 0){
                 current = q.remove();
-                q.add(current.left);
-                q.add(current.right);
+                if(current.left != null)q.add(current.left);
+                if(current.right != null) q.add(current.right);
                 subLevel.add(current.val);
                 size--;
             }
@@ -53,5 +66,10 @@ public class BinaryTreeLevelOrderTraversal {
 
         System.out.println(" ----- ORIGINAL TREE ----- ");
         PrintUtil.printBinaryTree(root);
+
+        List<List<Integer>>  result = levelOrder(root);
+        System.out.println(" ----- printing result array list  -----");
+        result.forEach(algorithm.util.PrintUtil::printIntArrayList);
+
     }
 }
