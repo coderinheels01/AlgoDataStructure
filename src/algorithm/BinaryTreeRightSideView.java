@@ -24,7 +24,7 @@ public class BinaryTreeRightSideView {
      * https://leetcode.com/problems/binary-tree-right-side-view/
      *
      */
-    public static List<Integer> rightSideView(Node root) {
+    public static List<Integer> rightSideViewBFS(Node root) {
         List<Integer> result = new ArrayList<>();
         if(root == null)
             return result;
@@ -47,13 +47,62 @@ public class BinaryTreeRightSideView {
         return result;
     }
 
+    /*
+     *  normal pre-order traversal  ( Root, Left, Right)
+     *  modified pre-order traversal ( Root, Right, Left )
+     *
+     *        1
+     *     2     3
+     *   4   5  6 7
+     *  8 9
+     * pre-order : [ 1, 2, 4, 8, 9, 5, 3, 6, 7  ]
+     * modified pre-order : [1, 3, 7, 6, 2, 5, 4, 9, 8]
+     *
+     *  1. we will use modifed pre-order because we want the right most nodes first.
+     *  2. at each level, check if the result array size is less than depth.
+     *     a) if it's less then we will add that node
+     *     b) otherwise we won't
+     * This is because we only want one right most node at each level.
+     * so we end up with result [1, 3, 7, 9]
+     *
+     *
+     */
+    public static List<Integer> rightSideViewDFS(Node root) {
+        List<Integer> result = new ArrayList<>();
+        if(root == null)
+            return result;
+        modifiedPreOrder(root, result, 1);
+        return result;
+    }
+
+    private static void modifiedPreOrder(Node root, List<Integer> result, int depth){
+        if(root == null)
+            return;
+
+        if(depth > result.size())
+            result.add(root.val);
+        modifiedPreOrder(root.right , result, depth+1);
+        modifiedPreOrder(root.left , result, depth+1);
+
+    }
+
+    private static void preOrder(Node root){
+        if(root == null)
+            return;
+        System.out.print( root.val + ", ");
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+
+
     public static void main(String ...args){
         /*
          *        1
          *     2     3
          *   4   5  6 7
          *  8 9
-         * In order : [ 4, 2, 5, 1, 6, 3 ]
+         * pre-order : [ 1, 2, 4, 8, 9, 5, 3, 6, 7  ]
+         * modified pre-order : [1, 3, 7, 6, 2, 5, 4, 9, 8]
          */
         Node root = new Node(1);
         root.left = new Node(2);
@@ -66,8 +115,12 @@ public class BinaryTreeRightSideView {
         root.left.left.right = new Node(9);
         System.out.println(" ----- ORIGINAL TREE ----- ");
         PrintUtil.printBinaryTree(root);
-        System.out.println("----- RIGHT SIDE OF THE TREE ----- ");
-        algorithm.util.PrintUtil.printIntArrayList(rightSideView(root));
+        System.out.println("----- PRINTING PRE-ORDER -----");
+        preOrder(root);
+        System.out.println("\n----- RIGHT SIDE OF THE TREE (BFS) ----- ");
+        algorithm.util.PrintUtil.printIntArrayList(rightSideViewBFS(root));
+        System.out.println("----- RIGHT SIDE OF THE TREE (DFS) ----- ");
+        algorithm.util.PrintUtil.printIntArrayList(rightSideViewDFS(root));
 
     }
 }
