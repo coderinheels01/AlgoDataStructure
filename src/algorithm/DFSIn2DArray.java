@@ -14,6 +14,10 @@ public class DFSIn2DArray {
 
 
 
+    /*
+     *  Time Complexity : O(N)
+     *  Space Complexity : O(N)
+     */
     public static int[] dfs(int[][] input){
         int rows = input.length;
         int cols = input[0].length;
