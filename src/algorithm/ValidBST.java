@@ -52,11 +52,6 @@ public class ValidBST {
         PrintUtil.printBinaryTree(root);
         System.out.println("isValidBST " + isValidBST(root));
 
-        //[     2
-        //   1     4
-        // 7   4   8 3
-        //6 4 7
-
         root = new Node(2147483647);
         PrintUtil.printBinaryTree(root);
         System.out.println("isValidBST " + isValidBST(root));
