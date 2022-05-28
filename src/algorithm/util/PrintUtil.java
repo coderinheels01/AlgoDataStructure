@@ -10,6 +10,15 @@ public class PrintUtil {
         System.out.printf("Printing for method %s: %s \n", method,  Arrays.stream(numbers).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
         System.out.println();
     }
+
+    public static void printTwoDIntArray(int[][] numbers){
+        for(int i =0; i< numbers.length; i++){
+            for(int j=0; j< numbers[0].length; j++){
+                System.out.print(numbers[i][j] + ", ");
+            }
+            System.out.println();
+        }
+    }
     public static void printIntArrayWithoutName(int[] numbers){
         System.out.printf("Printing for method %s \n",  Arrays.stream(numbers).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
         System.out.println();
