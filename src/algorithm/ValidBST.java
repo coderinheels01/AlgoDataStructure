@@ -5,10 +5,11 @@ import algorithm.util.binarytree.PrintUtil;
 public class ValidBST {
 
     /*
-     * 1. call dfs function with -Infinity and Infinity as boundaries
+     * 1. call dfs function with null left and null right boundaries
+     *
      */
     public static boolean isValidBST(Node root) {
-        return dfsWithBoundary(root, Long.MIN_VALUE, Long.MAX_VALUE);
+        return dfsWithBoundary(root, null, null);
     }
     /*
      * 1. base case: return true if the root is null
@@ -23,12 +24,13 @@ public class ValidBST {
      *
      * https://leetcode.com/problems/validate-binary-search-tree/
      */
-    private static boolean dfsWithBoundary(Node root, long leftBoundary, long rightBoundary){
+    private static boolean dfsWithBoundary(Node root, Integer leftBoundary, Integer rightBoundary){
         if(root == null){
             return true;
         }
-        return root.val > leftBoundary && root.val < rightBoundary && dfsWithBoundary(root.left, leftBoundary, root.val) && dfsWithBoundary(root.right, root.val , rightBoundary);
+        return ( leftBoundary == null || root.val > leftBoundary) && (rightBoundary == null || root.val < rightBoundary) && dfsWithBoundary(root.left, leftBoundary, root.val) && dfsWithBoundary(root.right, root.val , rightBoundary);
     };
+
 
     public static  void main(String ...args){
         Node root = new Node(12);
@@ -55,8 +57,6 @@ public class ValidBST {
         root = new Node(2147483647);
         PrintUtil.printBinaryTree(root);
         System.out.println("isValidBST " + isValidBST(root));
-
-
 
     }
     
