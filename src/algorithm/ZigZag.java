@@ -40,6 +40,8 @@ public class ZigZag {
      * Space O(N)
      *
      * https://www.youtube.com/watch?v=-fFDzIWebA4&t=1215s
+     *
+     * https://leetcode.com/problems/zigzag-conversion/
      */
     public static String convertZigZagStringWithIndex(String s, int numRow){
         if(numRow == 1)
