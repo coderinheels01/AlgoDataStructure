@@ -58,7 +58,7 @@ public class BinaryTreeRightSideView {
      * pre-order : [ 1, 2, 4, 8, 9, 5, 3, 6, 7  ]
      * modified pre-order : [1, 3, 7, 6, 2, 5, 4, 9, 8]
      *
-     *  1. we will use modifed pre-order because we want the right most nodes first.
+     *  1. we will use modified pre-order because we want the right most nodes first.
      *  2. at each level, check if the result array size is less than depth.
      *     a) if it's less then we will add that node
      *     b) otherwise we won't
