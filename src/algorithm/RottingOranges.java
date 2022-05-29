@@ -32,6 +32,8 @@ public class RottingOranges {
      * Space Complexity : O(N) - at worst case scenario, the entire grid is filled with rotten oranges ( 2 ) and we will
      *                    have to push all the oranges into the queue.
      *
+     * https://leetcode.com/problems/rotting-oranges/
+     *
      */
     public static int orangesRotting(int[][] grid) {
         if(grid  == null || grid.length == 0) return 0;
