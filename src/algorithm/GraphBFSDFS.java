@@ -121,6 +121,5 @@ public class GraphBFSDFS {
         PrintUtil.printIntArrayWithoutName(bfs(graph));
         System.out.println("----- dfs result -----");
         PrintUtil.printIntArrayWithoutName(dfs(graph));
-
     }
 }
