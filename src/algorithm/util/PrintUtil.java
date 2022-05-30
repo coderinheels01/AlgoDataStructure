@@ -36,5 +36,8 @@ public class PrintUtil {
         numbers.forEach(x -> System.out.print(x + ","));
         System.out.println();
     }
+    public static void printNestedArrayList(List<List<Integer>> numbers){
+        numbers.forEach(x -> System.out.println(x));
+    }
 
 }
