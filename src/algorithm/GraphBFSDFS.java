@@ -101,15 +101,15 @@ public class GraphBFSDFS {
 
     static int CURRENT = 0;
     private static void dfsExplore(List<List<Integer>> graph , int[] result,boolean[] seen ,int vertex){
+        if(seen[vertex])
+            return;
         result[CURRENT++] = vertex;
         seen[vertex] = true;
 
         List<Integer> neighbours = graph.get(vertex);
 
         for(int v: neighbours){
-            if(!seen[v]){
-                dfsExplore(graph, result, seen, v );
-            }
+            dfsExplore(graph, result, seen, v );
         }
     }
 
