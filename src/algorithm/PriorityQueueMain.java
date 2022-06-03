@@ -2,7 +2,7 @@ package algorithm;
 
 public class PriorityQueueMain {
     public static  void main(String ...args){
-        PriorityQueue<Integer> maxHeap= new PriorityQueue<>();
+        MyPriorityQueue<Integer> maxHeap= new MyPriorityQueue<>();
         maxHeap.add(50);
         maxHeap.add(10);
         maxHeap.add(5);

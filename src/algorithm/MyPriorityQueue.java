@@ -3,16 +3,16 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class PriorityQueue<T> {
+public class MyPriorityQueue<T> {
     private List<Integer> heap;
     private Comparator<Integer> defaultComparator;
 
-    public PriorityQueue(){
+    public MyPriorityQueue(){
         heap = new ArrayList<>();
         defaultComparator = (a, b) ->  (a > b) ?  0 : 1;
     };
 
-    public PriorityQueue(Comparator<Integer> comparator){
+    public MyPriorityQueue(Comparator<Integer> comparator){
         heap = new ArrayList<>();
         defaultComparator = comparator;
     }

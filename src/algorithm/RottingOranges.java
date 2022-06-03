@@ -19,7 +19,7 @@ public class RottingOranges {
      *    into a queue.
      * 3. while q is not empty. process each elements at position
      * 4. inside the while loop,
-     *    1. we need to process the coordinates put inside the queues level by level. Becuase we can
+     *    1. we need to process the coordinates put inside the queues level by level. Because we can
      *       rot only adjacent fresh oranges at a time.
      *    2. remove first coordinates to process from queue
      *    3. move up, down, left, right from those positions, check for fresh oranges and mark them as processed with 2.

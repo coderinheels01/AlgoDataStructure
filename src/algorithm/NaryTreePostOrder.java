@@ -22,6 +22,9 @@ public class NaryTreePostOrder {
      *
      * Time Complexity : O(N^2)
      * Space Complexity: O(N)
+     *
+     * https://leetcode.com/problems/n-ary-tree-postorder-traversal/
+     *
      */
     public static List<Integer> postorderRecursive(Node root) {
         List<Integer> result = new ArrayList<>();
