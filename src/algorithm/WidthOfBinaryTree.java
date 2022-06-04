@@ -106,10 +106,14 @@ public class WidthOfBinaryTree {
     public static void main(String ...args){
 
         /*
-         *      1
-         *    3    2
-         *  5   3   9
+         * indexes are in braces.
          *
+         * actual tree:
+         *          1 (1)
+         *    3(2)          2(3)
+         *  5(4)   3(5) null(6)  9(7)
+         *
+         * max width = ( right most index - left most index ) + 1 = ( 7 - 4 ) +1 = 4
          *
          */
         Node  root = new Node(1);
@@ -124,6 +128,18 @@ public class WidthOfBinaryTree {
         System.out.println("(Queue) width of a binary tree " + widthOfBinaryTreeUsingQueue(root));
         System.out.println("(HashMap) width of a binary tree " + widthOfBinaryTreeUsingHashMap(root));
 
+
+        /*
+         *          1 (1)
+         *       3(2)   2(3)
+         *     5(4)
+         *
+         * max width at level 1 = 1
+         * max width at level 2 = 2
+         * max width at level 3 = 1
+         *
+         * hence max width is 2.
+         */
         root = new Node(1);
         root.left = new Node(3);
         root.right = new Node(2);
@@ -133,6 +149,23 @@ public class WidthOfBinaryTree {
         PrintUtil.printBinaryTree(root);
         System.out.println("(Queue) width of a binary tree " + widthOfBinaryTreeUsingQueue(root));
         System.out.println("(HashMap) width of a binary tree " + widthOfBinaryTreeUsingHashMap(root));
+
+
+        /*
+         *
+         *                           1(1)
+         *              3(2)                             2(3)
+         *       5(4)         null(5)            null(6)         9(7)
+         *    6(8) null(9) null(10) null(11) null(12) null(13)  7(14)
+         *
+         *  max width at level 1 : 1
+         *  max width at level 2 : 2
+         *  max width at level 3 : 4
+         *  max width at level 4 : 7
+         *
+         * so max width is 7
+         *
+         */
 
         root = new Node(1);
         root.left = new Node(3);
