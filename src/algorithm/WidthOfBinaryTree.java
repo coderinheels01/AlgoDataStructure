@@ -27,7 +27,7 @@ public class WidthOfBinaryTree {
      * https://leetcode.com/problems/maximum-width-of-binary-tree/submissions/
      * https://www.youtube.com/watch?v=ZbybYvcVLks
      */
-    public static int widthOfBinaryTree(Node root) {
+    public static int widthOfBinaryTreeUsingQueue(Node root) {
         Queue<Map<Node, Integer>> q  = new LinkedList<>();
         q.add(makeMap(root, 1));
         int leftIndex = 0;
@@ -58,7 +58,6 @@ public class WidthOfBinaryTree {
                 }
             }
 
-            System.out.println("first "  + first + " last " + last);
             width = Math.max(width, (last - first) +1);
         }
 
@@ -69,6 +68,40 @@ public class WidthOfBinaryTree {
     private static Map<Node, Integer> makeMap(Node node, int index){
         return new HashMap<>(){{put(node, index);}};
     }
+
+
+    /*
+     * 1. create a global hashmap to store left most node index at each level. ( key = current depth, value = left most index )
+     * 2. create a global maxValue so a maxValue at each level can be stored.
+     * 3. call a recursive function with current node, depth and index.
+     * 4. computeIfAbsent will take care of left most node index at the current level.
+     * 5. recursively call left node first then right node.
+     *
+     * Time Complexity: O(N)
+     * Space Complexity : O(N)
+     */
+    static Map<Integer, Integer>  leftMostNodesIndex;
+    static int   maxNumber;
+    public static int widthOfBinaryTreeUsingHashMap(Node root) {
+        maxNumber = 0;
+        leftMostNodesIndex = new HashMap<>();
+        calculateMaxWidth(root, 0, 1 );
+        return maxNumber;
+    };
+
+    private static void calculateMaxWidth(Node node, int depth, int currentIndex){
+        if(node == null)
+            return;
+
+        leftMostNodesIndex.computeIfAbsent(depth, pos -> currentIndex);
+        maxNumber = Math.max(maxNumber, (currentIndex - leftMostNodesIndex.get(depth))  +1);
+
+        calculateMaxWidth(node.left, depth + 1, (currentIndex * 2) +1);
+        calculateMaxWidth(node.right, depth + 1, (currentIndex * 2) + 2);
+
+    }
+
+
 
     public static void main(String ...args){
 
@@ -88,7 +121,8 @@ public class WidthOfBinaryTree {
 
         System.out.println("----- ORIGINAL TREE -----");
         PrintUtil.printBinaryTree(root);
-        System.out.println("width of a binary tree " + widthOfBinaryTree(root));
+        System.out.println("(Queue) width of a binary tree " + widthOfBinaryTreeUsingQueue(root));
+        System.out.println("(HashMap) width of a binary tree " + widthOfBinaryTreeUsingHashMap(root));
 
         root = new Node(1);
         root.left = new Node(3);
@@ -97,7 +131,8 @@ public class WidthOfBinaryTree {
 
         System.out.println("----- ORIGINAL TREE -----");
         PrintUtil.printBinaryTree(root);
-        System.out.println("width of a binary tree " + widthOfBinaryTree(root));
+        System.out.println("(Queue) width of a binary tree " + widthOfBinaryTreeUsingQueue(root));
+        System.out.println("(HashMap) width of a binary tree " + widthOfBinaryTreeUsingHashMap(root));
 
         root = new Node(1);
         root.left = new Node(3);
@@ -109,6 +144,7 @@ public class WidthOfBinaryTree {
 
         System.out.println("----- ORIGINAL TREE -----");
         PrintUtil.printBinaryTree(root);
-        System.out.println("width of a binary tree " + widthOfBinaryTree(root));
+        System.out.println("(Queue) width of a binary tree " + widthOfBinaryTreeUsingQueue(root));
+        System.out.println("(HashMap) width of a binary tree " + widthOfBinaryTreeUsingHashMap(root));
     }
 }
