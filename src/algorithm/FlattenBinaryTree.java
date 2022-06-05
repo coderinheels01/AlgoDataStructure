@@ -1,9 +1,10 @@
 package algorithm;
 import algorithm.util.binarytree.Node;
+import algorithm.util.binarytree.PrintUtil;
 
 public class FlattenBinaryTree {
 
-    public static void flatten(Node node){
+    public static void flattenRecursive(Node node){
         Node left = dfs(node, null);
         while(left != null){
             System.out.print(left.val + " , ");
@@ -58,6 +59,9 @@ public class FlattenBinaryTree {
         root.left.right = new Node(4);
         root.right.right = new Node(6);
 
-        flatten(root);
+        System.out.println("----- ORIGINAL TREE -----");
+        PrintUtil.printBinaryTree(root);
+        System.out.println("----- RECURSIVE CALL RESULT -----");
+        flattenRecursive(root);
     }
 }
