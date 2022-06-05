@@ -18,6 +18,9 @@ public class PartitionList {
      * Time Complexity : O(N)
      * Space Complexity: O(1)
      *
+     *    Input: head = [1,4,3,2,5,2], x = 3
+     *   Output: [1,2,2,4,3,5]
+     *
      * https://leetcode.com/problems/partition-list/submissions/
      * https://www.youtube.com/watch?v=KT1iUciJr4g
      * https://www.youtube.com/watch?v=K5AVJVjdmL0&list=PLU_sdQYzUj2keVENTP0a5rdykRSgg9Wp-&index=37
