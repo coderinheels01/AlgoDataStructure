@@ -51,7 +51,7 @@ public class FlattenBinaryTree {
     }
 
     /*
-     *  1. push right node into stack
+     *  1. push right node into stack ( important that right node goes first )
      *  2. push left node into stack
      *  3. if stack is not empty, link the current node's right to top of of the stack. since we pushed right
      *     nodes first, and left node last. so the left node will be pointing to the right node.
