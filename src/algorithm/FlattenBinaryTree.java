@@ -30,6 +30,9 @@ public class FlattenBinaryTree {
      * Time Complexity : O(N)
      * Space Complexity : O(N)
      *
+     * https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+     * https://www.youtube.com/watch?v=sWf7k1x9XR4
+     *
      */
     private static Node dfs(Node node, Node prev){
         if(node == null)
