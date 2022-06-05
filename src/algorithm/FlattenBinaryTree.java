@@ -2,6 +2,8 @@ package algorithm;
 import algorithm.util.binarytree.Node;
 import algorithm.util.binarytree.PrintUtil;
 
+import java.util.Stack;
+
 public class FlattenBinaryTree {
 
     public static void flattenRecursive(Node node){
@@ -48,13 +50,45 @@ public class FlattenBinaryTree {
         return prev;
     }
 
+    /*
+     *  1. push right node into stack
+     *  2. push left node into stack
+     *  3. if stack is not empty, link the current node's right to top of of the stack. since we pushed right
+     *     nodes first, and left node last. so the left node will be pointing to the right node.
+     *
+     * Time Complexity : O(N)
+     * Space Complexity: O(N)
+     */
+    public static void flattenIterative(Node node){
+        Stack<Node> stack = new Stack<>();
+        stack.push(node);
+        while(!stack.isEmpty()){
+            Node n = stack.pop();
+
+            if(n.right != null){
+                stack.push(n.right);
+            }
+
+            if(n.left != null){
+                stack.push(n.left);
+            }
+            if(!stack.isEmpty()){
+                n.right = stack.peek();
+                n.left = null;
+            }
+        }
+
+        while(node != null){
+            System.out.print(node.val + " , ");
+            node = node.right;
+        }
+    }
+
     public static void main(String ...args){
 
-        /*
-         *          1
-         *        2     5
-         *    3     4     6
-         */
+        // *          1
+        // *        2     5
+        // *    3     4     6
         Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(5);
@@ -64,7 +98,16 @@ public class FlattenBinaryTree {
 
         System.out.println("----- ORIGINAL TREE -----");
         PrintUtil.printBinaryTree(root);
-        System.out.println("----- RECURSIVE CALL RESULT -----");
+        System.out.println("----- RECURSIVE SOLUTION -----");
         flattenRecursive(root);
+
+        root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(5);
+        root.left.left = new Node(3);
+        root.left.right = new Node(4);
+        root.right.right = new Node(6);
+        System.out.println("\n----- ITERATIVE SOLUTION -----");
+        flattenIterative(root);
     }
 }
