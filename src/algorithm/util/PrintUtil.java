@@ -19,6 +19,14 @@ public class PrintUtil {
             System.out.println();
         }
     }
+    public static void printTwoDCharArray(char[][] chars){
+        for(int i =0; i< chars.length; i++){
+            for(int j=0; j< chars[0].length; j++){
+                System.out.print(chars[i][j] + ", ");
+            }
+            System.out.println();
+        }
+    }
     public static void printIntArrayWithoutName(int[] numbers){
         System.out.printf("Printing for method %s \n",  Arrays.stream(numbers).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
         System.out.println();

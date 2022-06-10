@@ -32,7 +32,7 @@ public class QuickSort {
      * 2. pick index left and right, first start from left most element.
      * 3. check if element at right is less than element at pivot? then swap element at left and right.
      *    and then increment left;
-     * 4. at the end, swap element at pivot and element at left.
+     * 4. at the end, swap element at pivot and element at right.
      * 5. return left as the partition
      */
     private static int partition(int[] nums, int left, int right){
