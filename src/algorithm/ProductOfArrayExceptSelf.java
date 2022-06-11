@@ -5,16 +5,17 @@ import algorithm.util.PrintUtil;
 public class ProductOfArrayExceptSelf {
     /*
      *  left and right product O(N) space solution.
-     * 1. assign left[0] with 1 so we won't get zero value when multiplied.
-     * 2. starting from index 1, calculate product of left and nums at index - 1 and assign it to left[index].
-     * 3. starting from index n-1, calculate product of right and nums at n-1 and assign it to right[n-2];
-     * 4. loop the nums once again and assing product of left and right array to the result.
+     * 1. assign left[0] with 1 so we won't get zero value when multiplied. ( pretend that we have 1 at index -1 and index n+1)
+     * 2. starting from index 1, calculate product of left and nums at index - 1 and assign it to left[index]. ( this will give product of all nums before current index)
+     * 3. starting from index n-1, calculate product of right and nums at n-1 and assign it to right[n-2]; ( this will give product of all nums after current index).
+     * 4. loop the nums once again and assing product of left and right array to the result. ( at each index,  left[index] * right[index] will give product of all numbers except self.
      *
      * Time Complexity : O(N)
      * Space Complexity :O(N)
      *
      * https://leetcode.com/problems/product-of-array-except-self/
-     * 
+     * https://www.youtube.com/watch?v=bNvIQI2wAjk
+     *
      */
     public static int[] productExceptSelf(int[] nums) {
         int n = nums.length;
@@ -45,6 +46,8 @@ public class ProductOfArrayExceptSelf {
      *
      * Time Complexity : O(N)
      * Space Complexity :O(1)
+     *
+     * https://www.youtube.com/watch?v=bNvIQI2wAjk
      */
     public static int[] productExceptSelfOptimized(int[] nums) {
         int n = nums.length;
