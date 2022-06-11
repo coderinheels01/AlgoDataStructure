@@ -32,10 +32,41 @@ public class BestTimeToBuySellStock {
         return maxProfit;
     };
 
+    /*
+     * using two pointer technique. both left and right pointers starting at 0.
+     * 1. initialize left and right pointers with 0 but one will be looking for low price and the other will look for high price.
+     * 2. check if price at left index is higher than right pointer then we move left pointer to find the low price. on first day, both are pointing
+     *    at zero index so we will always start with moving the right pointer to the next value.
+     * 3. otherwise keep moving right index and calculate profit at that index, then compare to maxProfit and replace maxProfit if the profit of the day is
+     *    higher.
+     *
+     * Time Complexity : O(N)
+     * Space Complexity : O(1)
+     */
+    public static int maxProfitTwoPointer(int[] prices) {
+        int left =0;
+        int right =0;
+        int n = prices.length;
+        int maxProfit = 0;
+
+        while(left < n &&  right < n){
+            maxProfit = Math.max(maxProfit, prices[right] - prices[left]);
+            if(prices[left] > prices[right]){
+                left++;
+            }
+            else{
+                right++;
+            }
+        }
+
+        return maxProfit;
+    };
+
     public static void main(String ...args){
         int[] prices = {7,1,5,3,6,4};
         System.out.println("----- PRICES OF EACH DAY -----");
         PrintUtil.printIntArrayWithoutName(prices);
         System.out.println("max profit : " + maxProfit(prices));
+        System.out.println("(two pointer solution ) max profit : " + maxProfitTwoPointer(prices));
     }
 }
