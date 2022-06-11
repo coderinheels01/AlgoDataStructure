@@ -49,6 +49,8 @@ public class TrappingRainWater {
      * Space Complexity : O(N)
      *
      * https://www.geeksforgeeks.org/trapping-rain-water/
+     * https://www.youtube.com/watch?v=ZI2z5pq0TqA
+     *
      *
      */
     public static int trapMethod2(int[] height) {
@@ -100,6 +102,9 @@ public class TrappingRainWater {
      *
      * Time Complexity : O(N)
      * Space Complexity : O(1)
+     *
+     * https://www.youtube.com/watch?v=ZI2z5pq0TqA
+     *
      *
      *
      */
