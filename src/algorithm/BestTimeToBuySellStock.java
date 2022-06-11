@@ -34,6 +34,7 @@ public class BestTimeToBuySellStock {
 
     /*
      * using two pointer technique. both left and right pointers starting at 0.
+     *  left pointer = buy, right pointer = sell
      * 1. initialize left and right pointers with 0 but one will be looking for low price and the other will look for high price.
      * 2. check if price at left index is higher than right pointer then we move left pointer to find the low price. on first day, both are pointing
      *    at zero index so we will always start with moving the right pointer to the next value.
