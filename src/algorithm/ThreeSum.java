@@ -11,8 +11,11 @@ public class ThreeSum {
      * 3. check if number in outside array are not dupes , then find two sum in nested loop
      * 4. In the nested loop, using two pointers, keep moving the pointers inward as long as dupes are there.
      *
+     * Note: this algorithm removes duplicates from outer loop with continue if found and with while loop on two pointers left and right to get rid of
+     *       the dupes inside nested loop.
+     *
      * Time Complexity : O(N^2) , because the while loop inside nested while loop is just moving the left and right pointers
-     * Space Complexity: O(N)
+     * Space Complexity: O(N) - varies on the language used.
      *
      * https://www.youtube.com/watch?v=jeim_j8VdiM
      * https://leetcode.com/problems/3sum/
@@ -81,6 +84,16 @@ public class ThreeSum {
         System.out.println(" -----  RESULT  ----- ");
         List<List<Integer>> result1 = threeSum(nums1);
         for(List<Integer> r : result1){
+            PrintUtil.printIntArrayList(r);
+        }
+
+        int[] nums3 = {-1,-1,-1,-1,0,0,1,1,1};
+        //int[]  nums1 = {0, 0, 0};
+        System.out.println(" -----  ORIGINAL ARRAY ----- ");
+        PrintUtil.printIntArrayWithoutName(nums3);
+        System.out.println(" -----  RESULT  ----- ");
+        List<List<Integer>> result2 = threeSum(nums3);
+        for(List<Integer> r : result2){
             PrintUtil.printIntArrayList(r);
         }
     }
