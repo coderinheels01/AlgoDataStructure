@@ -25,10 +25,12 @@ public class MinimumWindowSubstring {
      *
      *
      * Time Complexity: O(N) even though we have nested while loop it is always used to move the left pointer to the right. so we can ignore that.
-     * Space Complexity: O(52 + 52). we ignore the constants so space Compelxity is O(1).
+     * Space Complexity: O(52 + 52). we ignore the constants so space complexity is O(1).
      *
      * https://leetcode.com/problems/minimum-window-substring/
      * https://www.youtube.com/watch?v=jSto0O4AJbM
+     * https://www.youtube.com/watch?v=yT5nzi9f_T4
+     *
      *
      */
     public static String minWindow(String s, String t) {
@@ -43,7 +45,6 @@ public class MinimumWindowSubstring {
 
         int minLength = Integer.MAX_VALUE;
         int minLeft=0;
-        int minRight =0;
 
         int index;
         for(int i=0; i< t.length(); i++){
@@ -65,7 +66,6 @@ public class MinimumWindowSubstring {
                 if(minLength >  (right - left ) +1){
                     minLength =  (right - left ) +1;
                     minLeft = left;
-                    minRight = right+1;
                 }
 
                 index = getIndex(s.charAt(left));
@@ -83,7 +83,7 @@ public class MinimumWindowSubstring {
             right++;
 
         }
-        return s.substring(minLeft, minRight);
+        return minLength == Integer.MAX_VALUE ? "" : s.substring(minLeft, minLeft+minLength);
     };
 
     private static  int getIndex(char c){
