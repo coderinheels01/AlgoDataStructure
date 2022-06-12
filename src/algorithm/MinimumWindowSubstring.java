@@ -1,5 +1,8 @@
 package algorithm;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MinimumWindowSubstring {
 
     /*
@@ -86,27 +89,77 @@ public class MinimumWindowSubstring {
         return minLength == Integer.MAX_VALUE ? "" : s.substring(minLeft, minLeft+minLength);
     };
 
+    /*
+     * same concept as above except we use HashMap instead of char array here and hash map count is the need while matched is the have.
+     */
+    public static String minWindowWithHashMap(String s, String t) {
+        if(s == null || t.length() > s.length() ) return "";
+
+
+        Map<Character, Integer> count = new HashMap<>();
+
+
+        for(int i=0; i< t.length(); i++){
+            char c = t.charAt(i);
+            count.put(c, count.getOrDefault(c, 0)+1);
+        }
+
+        int left =0 ; int right = 0; int minWindow = Integer.MAX_VALUE; int matched =0; int minLeft=0;
+
+        while(right < s.length()){
+            char c = s.charAt(right);
+           if(count.containsKey(c)){
+               count.put(c, count.get(c)-1);
+               if(count.get(c) == 0)
+                   matched++;
+           }
+           while(count.size() == matched){
+               int currentWindow = (right - left) +1;
+               if(currentWindow < minWindow){
+                   minWindow = currentWindow;
+                   minLeft = left;
+               }
+               c = s.charAt(left);
+               if(count.containsKey(c)){
+                   count.put(c, count.get(c)+1);
+                   if(count.get(c) > 0)
+                       matched--;
+               };
+               left++;
+           }
+           right++;
+        }
+
+        return (minWindow == Integer.MAX_VALUE) ? "" : s.substring(minLeft, minLeft + minWindow);
+    };
+
     private static  int getIndex(char c){
         return (Character.isUpperCase(c)) ?( c -'A') +26 : c -'a';
     }
     public static void main(String ...args){
         String s = "ADOBECODEBANC"; String t = "ABC";
         System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindow(s, t));
+        System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindowWithHashMap(s, t));
 
         s = "a"; t = "a";
         System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindow(s, t));
+        System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindowWithHashMap(s, t));
 
         s = "a"; t = "aa";
         System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindow(s, t));
+        System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindowWithHashMap(s, t));
 
         s = "ab"; t = "A";
         System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindow(s, t));
+        System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindowWithHashMap(s, t));
 
         s = "aa"; t = "aa";
         System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindow(s, t));
+        System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindowWithHashMap(s, t));
 
         s = "aaaaaaaaaaaabbbbbcdd"; t = "abcdd";
         System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindow(s, t));
+        System.out.println("sub-string of "+ s +" that is the permutation of " + t +" is " + minWindowWithHashMap(s, t));
 
     }
 }
