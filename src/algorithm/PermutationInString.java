@@ -113,7 +113,7 @@ public class PermutationInString {
             if(count1[index] == count2[index]){
                 matches++;
             }
-            else {
+            else if(count1[index]+1 == count2[index]){
                 matches--;
             }
 
@@ -122,7 +122,7 @@ public class PermutationInString {
             if(count1[index] == count2[index]){
                 matches++;
             }
-            else {
+            else if(count1[index] -1 == count2[index]){
                 matches--;
             }
             left++;
