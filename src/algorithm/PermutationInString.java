@@ -128,7 +128,7 @@ public class PermutationInString {
             left++;
             right++;
         }
-        return false;
+        return matches == 26;
     };
 
 
