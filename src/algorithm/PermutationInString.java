@@ -131,15 +131,42 @@ public class PermutationInString {
         return matches == 26;
     };
 
+    public static boolean checkInclusionOptimized2(String s1, String s2) {
+        int len1 = s1.length(), len2 = s2.length();
+        if (len1 > len2) return false;
 
+        int[] count = new int[26];
+        for (int i = 0; i < len1; i++) {
+            count[s1.charAt(i) - 'a']++;
+            count[s2.charAt(i) - 'a']--;
+        }
+        if (allZero(count)) return true;
+
+        for (int i = len1; i < len2; i++) {
+            count[s2.charAt(i) - 'a']--;
+            count[s2.charAt(i - len1) - 'a']++;
+            if (allZero(count)) return true;
+        }
+
+        return false;
+    }
+
+    private static boolean allZero(int[] count) {
+        for (int i = 0; i < 26; i++) {
+            if (count[i] != 0) return false;
+        }
+        return true;
+    }
     public static void main(String ...args){
         String s1 = "ab", s2 = "eidbaooo";
         System.out.println("string : " + s1 + " s2 " + s2 + " does s2 contains permutation of s1? " + checkInclusion(s1, s2) );
         System.out.println("(OPTIMIZED)string : " + s1 + " s2 " + s2 + " does s2 contains permutation of s1? " + checkInclusionOptimized(s1, s2) );
+        System.out.println("(OPTIMIZED-2)string : " + s1 + " s2 " + s2 + " does s2 contains permutation of s1? " + checkInclusionOptimized2(s1, s2) );
 
         s1 = "ab";
         s2 = "eidboaoo";
         System.out.println("string : " + s1 + " s2 " + s2 + " does s2 contains permutation of s1? " + checkInclusion(s1, s2) );
         System.out.println("(OPTIMIZED)string : " + s1 + " s2 " + s2 + " does s2 contains permutation of s1? " + checkInclusionOptimized(s1, s2) );
+        System.out.println("(OPTIMIZED-2)string : " + s1 + " s2 " + s2 + " does s2 contains permutation of s1? " + checkInclusionOptimized(s1, s2) );
     }
 }
