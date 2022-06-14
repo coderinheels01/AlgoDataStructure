@@ -27,26 +27,52 @@ public class GenerateParentheses {
     public static List<String> generateParenthesisUsingStack(int n) {
         List<String> result = new ArrayList<>();
         Stack<String> stack = new Stack<>();
-        backtrack(0, 0, n, stack, result);
+        backtrackStack(0, 0, n, stack, result);
         return result;
     }
 
-    private static void backtrack(int openN, int closeN, int n, Stack<String> stack, List<String> result ){
+    private static void backtrackStack(int openN, int closeN, int n, Stack<String> stack, List<String> result ){
         if(openN == closeN && closeN == n)
             result.add(
                     stack.toString()
                             .replaceAll(",", "").replaceAll(" ", "").replaceAll("\\[", "").replaceAll("\\]", ""));
         if(openN < n){
             stack.push(OPEN_BRACKET);
-            backtrack(openN+1, closeN, n, stack, result);
+            backtrackStack(openN+1, closeN, n, stack, result);
             stack.pop();
         }
         if(closeN < openN){
             stack.push(CLOSE_BRACKET);
-            backtrack(openN, closeN+1, n, stack, result);
+            backtrackStack(openN, closeN+1, n, stack, result);
             stack.pop();
         }
 
+    }
+
+    /*
+     * backtracking without using stack.
+     * 1. call the recursive function with the result list, open and close and the original string.
+     * 2. if the current string length is two times n then we have our result and add to the result string.
+     * 3. if the open brackets are less than n then we can keep adding open brackets.
+     * 4. if the close brackets are less than open brackets then we can keep adding close brackets.
+     * 5. return the final result.
+     *
+     * Time Complexity: O(N)
+     * Space Complexity: O(N)
+     * https://www.youtube.com/watch?v=qBbZ3tS0McI
+     */
+    public static List<String> generateParenthesisOptimized(int n) {
+        List<String> result = new ArrayList<>();
+        backtrack(result, 0, 0, n, "");
+        return result;
+    };
+
+    private static void backtrack(List<String> result, int open, int close, int n, String s){
+        if(s.length() == n*2){
+            result.add(s);
+        }
+        if(open < n ) backtrack(result, open+1, close, n, s+OPEN_BRACKET);
+        if(close < open ) backtrack(result, open, close+1, n, s+CLOSE_BRACKET);
     }
 
     public static void main(String ...args){
@@ -54,6 +80,8 @@ public class GenerateParentheses {
         System.out.println("----- GENERATE PARENTHESIS -----");
         int n= 3;
         generateParenthesisUsingStack(n).stream().forEach(System.out::println);
+        System.out.println("\n-----OPTIMIZED -----");
+        generateParenthesisOptimized(n).stream().forEach(System.out::println);
 
     }
 }
