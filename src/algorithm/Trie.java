@@ -16,6 +16,10 @@ class TrieNode{
 /*
  * 1. need array of 26 char TriesNode array as children
  * 2. Root will be empty value.
+ *
+ * https://leetcode.com/problems/implement-trie-prefix-tree/
+ * https://www.youtube.com/watch?v=oobqoCJlHA0
+ *
  */
 public class Trie {
     TrieNode root;
