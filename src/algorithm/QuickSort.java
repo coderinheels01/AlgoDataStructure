@@ -55,6 +55,33 @@ public class QuickSort {
         num[j] = temp;
     }
 
+    public static void sort2(int[] a){
+        quickSort(a, 0, a.length-1);
+        System.out.println();
+    }
+
+    private static void quickSortMethod2(int[] a, int low, int high){
+        if(low >= high)
+            return;
+        int partition = a[high];
+        int left = low;
+        int right = high;
+        while(left < right){
+            while(a[left] <= partition && left < right){
+                left++;
+            }
+            while(a[right] > partition  && left < right){
+                right--;
+            }
+            swap(a, left, right);
+        }
+        swap(a, left, high);
+
+        quickSort(a, low, left-1);
+        quickSort(a, left+1, high);
+    }
+
+
     public static void main(String ...args){
         int[] a = {3,2,1,5,6,4};
         System.out.println("----- original array ----- ");
