@@ -8,7 +8,7 @@ public class Search2DMatrix {
      *    c) if target is greater than middle row element then move top to mid +1;
      *    d) otherwise break out of the loop
      * 2. calculate row using formula. row =( top + bottom) /2.
-     * 3. do binary search on the cols.
+     * 3. do binary search on the cols. only for the row found above.
      *    a) initialize left and right pointer values. and calculate mid pointer mid = ( left + right )/2
      *    b) if target is equal to matrix[row][mid] then we return true.
      *    c) if target is less than matrix[row][mid] then decrement the mid by 1.
