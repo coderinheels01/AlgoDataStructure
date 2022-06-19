@@ -3,6 +3,8 @@ package algorithm;
 /*
  * https://leetcode.com/problems/median-of-two-sorted-arrays/
  * https://www.youtube.com/watch?v=LPFhl65R7ww
+ * https://www.youtube.com/watch?v=q6IEA26hvXc
+ *
  *
  * 1 2 3 4
  * 5 6 7 8
