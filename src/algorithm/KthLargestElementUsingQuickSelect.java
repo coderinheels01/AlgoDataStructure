@@ -16,6 +16,8 @@ public class KthLargestElementUsingQuickSelect {
     /*
      * quick select is like quick sort but it will not sort the whole array. It will only sort part of the array that
      * the index to find is in.
+     *
+     * https://www.youtube.com/watch?v=XEmy13g1Qxc&t=948s
      */
     private static void quickSelect(int[] nums, int left, int right, int indexToFind){
         if(left < right){
