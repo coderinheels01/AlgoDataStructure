@@ -1,5 +1,10 @@
 package algorithm;
 
+/*
+ * https://leetcode.com/problems/min-stack/
+ * https://www.youtube.com/watch?v=qkLl7nAwDPo
+ *
+ */
 public class MinStack{
     private int size;
     private int current;
