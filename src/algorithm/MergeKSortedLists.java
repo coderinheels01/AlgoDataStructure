@@ -1,5 +1,7 @@
 package algorithm;
 
+import java.util.PriorityQueue;
+
 class ListNode {
       int val;
       ListNode next;
@@ -21,6 +23,9 @@ public class MergeKSortedLists {
      *
      * Time Complexity : O(k * N)
      * Space Complexity: O(1)
+     *
+     * https://leetcode.com/problems/merge-k-sorted-lists/
+     * https://www.youtube.com/watch?v=q5a5OiGbT6Q
      */
     public static ListNode mergeBruteForce(ListNode[] lists) {
         if(lists.length == 1)
@@ -65,6 +70,48 @@ public class MergeKSortedLists {
         }
         return dummy.next;
     }
+
+    public static ListNode mergeUsingPriorityQueue(ListNode[] lists) {
+        PriorityQueue<ListNode> minHeap = new PriorityQueue<>((n1, n2) -> n1.val - n2.val);
+        ListNode dummy = new ListNode();
+        ListNode current = dummy;
+
+        for(ListNode list : lists){
+            minHeap.add(list);
+        }
+
+        while(!minHeap.isEmpty()){
+            ListNode list = minHeap.poll();
+            current.next = list;
+            current = current.next;
+
+            if(list.next != null){
+                minHeap.offer(list.next);
+            }
+
+        }
+        return dummy.next;
+    }
+
+    public static ListNode mergeUsingMergeSort(ListNode[] lists) {
+        ListNode merged = merge(lists, 0, lists.length-1);
+        return merged;
+    }
+
+    private static ListNode merge(ListNode[] lists, int start, int end){
+        if(start > end)
+            return null;
+        if(start == end)
+            return lists[start];
+        if( start+1 == end){
+            return mergeTwoLists(lists[start], lists[end]);
+        }
+        int mid = start + (end - start )/2;
+        ListNode upper = merge(lists, start, mid);
+        ListNode lower = merge(lists, mid+1, end);
+        return mergeTwoLists(upper, lower);
+    }
+
     public static void main(String[] args) {
         ListNode l1 = new ListNode(2);
         l1.next = new ListNode(6);
@@ -79,7 +126,45 @@ public class MergeKSortedLists {
         l3.next.next = new ListNode(4);
 
         ListNode result = mergeBruteForce(new ListNode[] { l1, l2, l3 });
-        System.out.print("Here are the elements form the merged list: ");
+        System.out.print("(Brute-force) Here are the elements form the merged list: ");
+        while (result != null) {
+            System.out.print(result.val + " ");
+            result = result.next;
+        }
+
+        l1 = new ListNode(2);
+        l1.next = new ListNode(6);
+        l1.next.next = new ListNode(8);
+
+        l2 = new ListNode(3);
+        l2.next = new ListNode(6);
+        l2.next.next = new ListNode(7);
+
+        l3 = new ListNode(1);
+        l3.next = new ListNode(3);
+        l3.next.next = new ListNode(4);
+
+        result = mergeUsingPriorityQueue(new ListNode[]{l1, l2, l3});
+        System.out.print("\n(Priority Queue) Here are the elements form the merged list: ");
+        while (result != null) {
+            System.out.print(result.val + " ");
+            result = result.next;
+        }
+
+        l1 = new ListNode(2);
+        l1.next = new ListNode(6);
+        l1.next.next = new ListNode(8);
+
+        l2 = new ListNode(3);
+        l2.next = new ListNode(6);
+        l2.next.next = new ListNode(7);
+
+        l3 = new ListNode(1);
+        l3.next = new ListNode(3);
+        l3.next.next = new ListNode(4);
+
+        result = mergeUsingMergeSort(new ListNode[]{l1, l2, l3});
+        System.out.print("\n(Merge Sort) Here are the elements form the merged list: ");
         while (result != null) {
             System.out.print(result.val + " ");
             result = result.next;
