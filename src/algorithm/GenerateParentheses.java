@@ -33,9 +33,8 @@ public class GenerateParentheses {
 
     private static void backtrackStack(int openN, int closeN, int n, Stack<String> stack, List<String> result ){
         if(openN == closeN && closeN == n)
-            result.add(
-                    stack.toString()
-                            .replaceAll(",", "").replaceAll(" ", "").replaceAll("\\[", "").replaceAll("\\]", ""));
+            result.add(String.join("", stack));
+
         if(openN < n){
             stack.push(OPEN_BRACKET);
             backtrackStack(openN+1, closeN, n, stack, result);
